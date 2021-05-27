@@ -77,7 +77,7 @@ case "$OSTYPE" {
 					}
 					;;
 			}
-			_zsh_system_clipboard_set=(xclip -sel $clipboard_selection -in)
+			_zsh_system_clipboard_set=(xclip -sel $clipboard_selection -in -rmlastnl)
 			_zsh_system_clipboard_get=(xclip -sel $clipboard_selection -out)
 		elif _zsh_system_clipboard_command_exists xsel; then
 			local clipboard_selection
@@ -332,3 +332,4 @@ function () {
 		done
 	done
 }
+
